@@ -9,9 +9,11 @@ RUN set -x && \
 
 
 RUN mkdir /root/ws
-WORKDIR /root/ws
+RUN mkdir /root/ws/src
+WORKDIR /root/ws/src
 RUN git clone https://github.com/longjie/learn_ros_multimaster.git
-
-RUN rm -rf build devel
+WORKDIR /root/ws
 RUN . /opt/ros/indigo/setup.sh && catkin_make
+
+
 

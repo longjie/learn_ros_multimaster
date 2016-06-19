@@ -1,0 +1,6 @@
+<launch>
+  <!-- multimaster -->
+  <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery"/>
+  <node name="master_sync" pkg="master_sync_fkie" type="master_sync"/>
+  <node name="rviz" pkg="rviz" type="rviz"/>
+</launch>
