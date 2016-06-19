@@ -1,5 +1,5 @@
 docker run -it --rm --name rviz --privileged \
-    -w /root/multimaster_ws \
+    -w /root/ws \
     --hostname rviz \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env DISPLAY=unix$DISPLAY \
