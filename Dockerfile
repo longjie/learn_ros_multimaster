@@ -10,9 +10,15 @@ RUN set -x && \
 RUN mkdir /root/ws
 RUN mkdir /root/ws/src
 WORKDIR /root/ws/src
+
+# when use github
 # to avoid cache
-COPY .git/index dummyfile
-RUN git clone https://github.com/longjie/learn_ros_multimaster.git
+#COPY .git/index dummyfile
+#RUN git clone https://github.com/longjie/learn_ros_multimaster.git
+
+# when using local file
+ADD . ./
+
 WORKDIR /root/ws
 RUN . /opt/ros/indigo/setup.sh && catkin_make
 

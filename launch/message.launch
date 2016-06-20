@@ -3,8 +3,8 @@
   <!-- multimaster -->
   <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery"/>
   <node name="master_sync" pkg="master_sync_fkie" type="master_sync"/>
+
   <!-- publish message -->
   <node name="message_$(arg number)" pkg="rostopic" type="rostopic" args="pub -r 10 /message_$(arg number) std_msgs/String 'Hello from master_$(arg number)'"/>
-  <!-- publish tf -->
-  <node name="tf_$(arg number)" pkg="tf" type="static_transform_publisher" args="0 0 $(arg number) 0 0 0 map tf_master_$(arg number) 10"/>
+
 </launch>

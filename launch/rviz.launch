@@ -2,6 +2,10 @@
   <!-- multimaster -->
   <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery"/>
   <node name="master_sync" pkg="master_sync_fkie" type="master_sync"/>
+  
+  <!-- mulitimaster doesn't handle parameters, so we need robot description here -->
+  <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find kobuki_description)/urdf/kobuki_standalone.urdf.xacro'" />
+  <param name="robot_description" command="$(arg urdf_file)" />
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find learn_ros_multimaster)/rviz/multimaster.rviz"/>
 </launch>
