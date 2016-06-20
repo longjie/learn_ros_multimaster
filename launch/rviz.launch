@@ -2,5 +2,5 @@
   <!-- multimaster -->
   <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery"/>
   <node name="master_sync" pkg="master_sync_fkie" type="master_sync"/>
-  <node name="rviz" pkg="rviz" type="rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find learn_ros_multimaster)/rviz/multimaster.rviz"/>
 </launch>

@@ -3,5 +3,7 @@
   <include file="$(find kobuki_softnode)/launch/full.launch">
     <!-- <arg name="robot_name" value="robot_$(arg number)"/> -->
   </include>
-  <include file="$(find kobuki_random_walker)/launch/standalone.launch"/>
+  <node name="cmd_vel" pkg="rostopic" type="rostopic"
+	args="pub -r 10 /mobile_base/commands/velocity geometry_msgs/Twist '{linear: {x: 0.1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0.1}}'"/>
+  <!-- <include file="$(find kobuki_random_walker)/launch/standalone.launch"/> -->
 </launch>

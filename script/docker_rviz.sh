@@ -1,3 +1,4 @@
+xhost +
 docker run -it --rm --name rviz --privileged \
     -w /root/ws \
     --hostname rviz \
