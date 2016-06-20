@@ -1,3 +1,4 @@
+xhost +
 docker run -it --rm --name kobuki_$1 --privileged \
     -w /root/ws \
     --hostname kobuki_$1 \

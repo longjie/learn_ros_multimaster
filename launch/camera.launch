@@ -1,7 +1,11 @@
 <launch>
+  <arg name="number" default="1"/>
+
   <!-- multimaster -->
   <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery"/>
   <node name="master_sync" pkg="master_sync_fkie" type="master_sync"/>
   
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find learn_ros_multimaster)/rviz/multimaster.rviz"/>
+  <group ns="camera_$(arg number)">
+    <node name="uvc_camera" pkg="uvc_camera" type="uvc_camera_node"/>
+  </group>
 </launch>
