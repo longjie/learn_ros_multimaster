@@ -5,7 +5,7 @@ RUN set -x && \
     apt-get update && \
     apt-get install -y ros-indigo-multimaster-fkie \
     	    	       ros-indigo-kobuki-softnode \
-		       ros-uvc-camera		       
+		       ros-indigo-uvc-camera		       
 
 RUN mkdir /root/ws
 RUN mkdir /root/ws/src
