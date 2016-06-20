@@ -21,7 +21,7 @@ $ git clone https://github.com/longjie/learn_ros_multimaster.git
 ### Get the docker image from DockerHub
 
 ```
-$ docker pull longjie/learn
+$ docker pull longjie/learn_ros_multimaster
 ```
 
 The image is large, it may take some time.
@@ -45,12 +45,12 @@ $ ./docker_kobuki.sh 4
 Note you have run individual four ROS systems. The each container has
 its own master(roscore) running. Yes, it is multi-master system.
 
-The number after the script is for identify the node and topics. The
+The number after the script is to identify the node and topics. The
 mulitimaster_fkie syncs the node and topic name as is, so you need to
-use different namespace for each ROS node and topics. You cannot
-launch nodes which have same name.
+use different namespace for each ROS node and topic. You cannot launch
+nodes of the same name.
 
-### Launch the rviz
+### Launch rviz
 
 Now you can run another container to run rviz to visualize the robots.
 
@@ -71,6 +71,8 @@ camera applications(cheese, qv4l2, etc).
 ```
 $ ./docker_camera.sh
 ```
+
+You can see the image on the rviz's image plugin.
 
 ## Building docker image
 
