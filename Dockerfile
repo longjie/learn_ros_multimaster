@@ -3,7 +3,9 @@ MAINTAINER Ron Tajima <	ryosuke.tajima+dockerhub@gmail.com>
 
 RUN set -x && \
     apt-get update && \
-    apt-get install -y ros-indigo-multimaster-fkie ros-indigo-turtlebot-simulator
+    apt-get install -y ros-indigo-multimaster-fkie \
+    	    	       ros-indigo-kobuki-softnode \
+		       ros-indigo-kobuki-random-walker
 
 RUN mkdir /root/ws
 RUN mkdir /root/ws/src

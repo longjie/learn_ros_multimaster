@@ -1,0 +1,7 @@
+<launch>
+  <arg name="number" default="1"/>
+  <include file="$(find kobuki_softnode)/launch/full.launch">
+    <!-- <arg name="robot_name" value="robot_$(arg number)"/> -->
+  </include>
+  <include file="$(find kobuki_random_walker)/launch/standalone.launch"/>
+</launch>
