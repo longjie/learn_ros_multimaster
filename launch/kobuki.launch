@@ -1,9 +1,12 @@
 <launch>
   <arg name="number" default="1"/>
+  <!-- multimaster -->
+  <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery"/>
+  <node name="master_sync" pkg="master_sync_fkie" type="master_sync"/>
+
   <include file="$(find kobuki_softnode)/launch/full.launch">
     <!-- <arg name="robot_name" value="robot_$(arg number)"/> -->
   </include>
   <node name="cmd_vel" pkg="rostopic" type="rostopic"
 	args="pub -r 10 /mobile_base/commands/velocity geometry_msgs/Twist '{linear: {x: 0.1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0.1}}'"/>
-  <!-- <include file="$(find kobuki_random_walker)/launch/standalone.launch"/> -->
 </launch>
